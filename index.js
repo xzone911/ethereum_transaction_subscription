@@ -3,7 +3,7 @@ const dotEnv = require('dotenv-safe');
 dotEnv.config({example: '.env'});
 
 const redis = require("redis");
-const publisher = redis.createClient(process.env.REDIS_HOST, process.env.REDIS_PORT);
+const publisher = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
 const web3 = new Web3(new Web3.providers.WebsocketProvider(process.env.WEBSOCKET_ENDPOINT));
 const subscription = web3.eth.subscribe('pendingTransactions');
 
@@ -11,8 +11,6 @@ const subscription = web3.eth.subscribe('pendingTransactions');
 subscription.subscribe((error, result) => {
     if (error) {
         console.log(error);
-    } else {
-        console.log(result);
     }
 })
     .on('data', async (txHash) => {
