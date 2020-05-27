@@ -1,0 +1,19 @@
+{
+  "name": "ethereum_transaction_subscription",
+  "version": "1.0.0",
+  "description": "Ethereum Transaction Subscription",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "license": "",
+  "dependencies": {
+    "dotenv-safe": "^8.2.0",
+    "web3": "^1.2.7",
+    "redis": "3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
